@@ -22,12 +22,12 @@ COPY . .
 # PASO 4: Generar config.ts a partir de variables de entorno
 # El archivo no está en el repositorio (es sensible), se construye aquí
 RUN printf 'export const CONFIG = {\n\
-    db: process.env.DB_CONNECTION || "mongodb://localhost:27017/miapp",\n\
-    db_test: process.env.DB_CONNECTION_TEST || "mongodb://localhost:27017/miapp_test",\n\
+    db: process.env.DB_CONNECTION,\n\
+    db_test: process.env.DB_CONNECTION_TEST,\n\
     app: {\n\
-        port: process.env.PORT || 3000\n\
+        port: process.env.PORT\n\
     },\n\
-    jwt_key: process.env.JWT_KEY || "changeme",\n\
+    jwt_key: process.env.JWT_KEY,\n\
 };\n' > src/config.ts
 
 # Documentar el puerto que usa la app

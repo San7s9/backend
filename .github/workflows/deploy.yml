@@ -32,7 +32,7 @@ jobs:
           if [ "$HTTP_CODE" -ne 201 ]; then
             echo "❌ Deploy trigger failed with status $HTTP_CODE"
             exit 1
-          fi
+          fi  
 
           echo "✅ Deploy triggered successfully on Render!"
 
