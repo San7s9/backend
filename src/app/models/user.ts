@@ -60,4 +60,6 @@ UserSchema.pre('save', function (next) {
   next();
 });
 
+
+
 export const UserModel = model('User', UserSchema);
